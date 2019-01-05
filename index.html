@@ -1,17 +1,36 @@
+<!--  -->
+
 <!doctype html>
 <html>
 <head>
 	<title>Calendar</title>
+	
+	<!-- To use 'calendar.js', you must include
+	     'calendar.css' and 'calendar.js';
+	     'styles.css' is optional -->
 	<link rel="stylesheet" href="css/calendar.css"></link>
 	<link rel="stylesheet" href="css/styles.css"></link>
 	<script src="js/calendar.js"></script>
 	
+	<!-- Script appends a calendar that highlights today to the body -->
+	<script>
+		//Initiate the page
+		function init_page() {
+			let today = get_today();
+			let calendar = create_calendar(today.getFullYear(), today.getMonth());
+			calendar.highlight_day(today.getDate());
+			document.body.append(calendar.get_calendar());
+		}
+		
+		// Gets the date for today
+		// *returns* a Date object representing today
+		function get_today() {
+			return new Date();
+		}
+	</script>
+	
 	<meta charset="UTF-8" />
 </head>
 <body onload="init_page()">
-	<div id="calendar">
-		<div id="calendar-title"></div>
-		<div id="calendar-days"></div>
-	</div>
 </body>
 </html>
