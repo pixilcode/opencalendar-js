@@ -119,8 +119,8 @@ function set_first_day(calendar, day_of_week) {
 
 // Highlights the given day
 //*param* calendar: the DOM element representing the calendar
-//*param* day_of_month: an integer representing the
-//                      
+//*param* day_of_month: an integer representing the day of
+//                      the month
 function highlight_day(calendar, day_of_month) {
 	if(calendar.children.length < day_of_month) {
 		console.exception("Error: not enough days (highlight_day)");
